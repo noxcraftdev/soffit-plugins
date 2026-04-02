@@ -1,3 +1,11 @@
 description = "Timestamp of the last Claude response"
 components = ["time"]
 has_compact = true
+
+[colors.label]
+label = "Label"
+theme_field = "dim"
+
+[colors.time]
+label = "Time"
+theme_field = "lgray"
