@@ -164,5 +164,5 @@ result = {
     'components': defaults,
     'parts': parts_dict,
 }
-print(json.dumps(result), end='')
+print(json.dumps(result, ensure_ascii=False), end='')
 PYEOF

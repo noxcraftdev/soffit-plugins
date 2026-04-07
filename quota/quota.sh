@@ -192,6 +192,12 @@ show_all = len(components) == 0
 want  = lambda c: show_all or c in components
 
 rate_limits = (data.get('rate_limits') or {})
+
+if not rate_limits:
+    placeholder = f'{muted}5h: --  |  7d: --{reset}'
+    print(json.dumps({'output': placeholder, 'components': ['five_hour', 'seven_day']}, ensure_ascii=False))
+    sys.exit(0)
+
 segments = []
 
 for comp, window_secs, label, show_pace in [

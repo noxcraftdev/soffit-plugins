@@ -125,9 +125,17 @@ repo_url = None
 repo_name = None
 if remote_url:
     url = remote_url.strip()
-    if url.startswith('git@'):
-        url = url.replace(':', '/', 1).replace('git@', 'https://', 1)
-    url = url.rstrip('.git') if url.endswith('.git') else url
+    # Handle SSH URLs: git@HOST:PATH or HOST:PATH (SSH alias)
+    if not url.startswith('http'):
+        raw = url.replace('git@', '') if url.startswith('git@') else url
+        colon_idx = raw.find(':')
+        if colon_idx != -1 and '/' not in raw[:colon_idx]:
+            host = raw[:colon_idx]
+            path = raw[colon_idx + 1:]
+            if 'github' in host:
+                host = 'github.com'
+            url = f'https://{host}/{path}'
+    url = url[:-4] if url.endswith('.git') else url
     repo_url  = url
     repo_name = url.rsplit('/', 1)[-1] if '/' in url else url
 

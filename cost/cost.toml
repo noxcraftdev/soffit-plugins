@@ -17,7 +17,7 @@ palette_role = "danger"
 [icons.cost]
 label = "Cost icon"
 icons_field = "cost"
-default_value = "\U0001f4b8 "
+default_value = "💸 "
 is_char = false
 
 [settings.weekly_budget]
