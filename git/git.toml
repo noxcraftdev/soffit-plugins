@@ -25,7 +25,7 @@ palette_role = "accent"
 [icons.git_branch]
 label = "Branch icon"
 icons_field = "git_branch"
-default_value = "⌇ "
+default_value = "⎇ "
 is_char = false
 
 [icons.git_staged]

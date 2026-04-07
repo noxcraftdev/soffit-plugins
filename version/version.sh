@@ -139,27 +139,5 @@ if not parts:
     sys.exit(0)
 
 output = ''.join(parts)
-result = {
-    'output': output,
-    'components': defaults,
-    'parts': {}
-}
-
-# Build parts dict for compose
-for comp in defaults:
-    if comp == 'update' and (has_update or has_self_update):
-        icon = icons.get('update', '\u2191 ')
-        result['parts']['update'] = f'{warning}{icon}{reset}'
-    elif comp == 'version':
-        if compact or not use_unicode:
-            result['parts']['version'] = f'{muted}{version}{reset}'
-        else:
-            result['parts']['version'] = f'{muted}{superscript(version)}{reset}'
-    elif comp == 'model' and model:
-        if compact or not use_unicode:
-            result['parts']['model'] = f'{accent}{model}{reset}'
-        else:
-            result['parts']['model'] = f'{accent}{subscript(model)}{reset}'
-
-print(json.dumps(result), end='')
+print(output, end='')
 PYEOF

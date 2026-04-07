@@ -159,10 +159,5 @@ sep = ' ' if compact else ' | '
 body = sep.join(parts_list)
 output = body if compact else f'{icon}{body}'
 
-result = {
-    'output': output,
-    'components': defaults,
-    'parts': parts_dict,
-}
-print(json.dumps(result, ensure_ascii=False), end='')
+print(output, end='')
 PYEOF
