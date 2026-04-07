@@ -138,6 +138,6 @@ for comp in active:
 if not parts:
     sys.exit(0)
 
-output = ''.join(parts)
+output = ' '.join(parts)
 print(output, end='')
 PYEOF
