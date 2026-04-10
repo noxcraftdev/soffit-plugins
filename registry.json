@@ -15,7 +15,7 @@
     },
     "developer": {
       "description": "Developer focus -- git, cost tracking, session ID",
-      "line1": ["vim", "agent", "context_bar", "duration", "cost"],
+      "line1": ["vim", "agent", "context_bar", "duration", "usage"],
       "line2": ["git", "session"]
     }
   },
@@ -79,6 +79,11 @@
       "name": "cache-health",
       "description": "Cache efficiency health grade + detailed metrics (requires claudelytics)",
       "file": "cache-health/cache-health.sh"
+    },
+    {
+      "name": "usage",
+      "description": "Session token usage and cache efficiency (requires claudelytics)",
+      "file": "usage/usage.sh"
     }
   ]
 }

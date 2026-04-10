@@ -1,0 +1,46 @@
+description = "Session token usage and cache efficiency"
+components = ["tokens", "cache"]
+has_compact = true
+
+[theme.tokens]
+label = "Token count"
+palette_role = "primary"
+
+[theme.cache_good]
+label = "Cache (good)"
+palette_role = "success"
+
+[theme.cache_warn]
+label = "Cache (warning)"
+palette_role = "warning"
+
+[icons.cache]
+label = "Cache icon"
+icons_field = "cache"
+default_value = "↺"
+is_char = false
+
+[settings.warn_tokens_k]
+type = "int"
+label = "Warning token threshold (thousands)"
+default_value = 200
+
+[settings.danger_tokens_k]
+type = "int"
+label = "Danger token threshold (thousands)"
+default_value = 500
+
+[settings.good_cache_pct]
+type = "int"
+label = "Good cache threshold (%)"
+default_value = 95
+
+[settings.warn_cache_pct]
+type = "int"
+label = "Warning cache threshold (%)"
+default_value = 90
+
+[settings.cache_ttl]
+type = "int"
+label = "Cache TTL (seconds)"
+default_value = 60
